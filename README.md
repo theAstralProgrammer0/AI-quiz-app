@@ -1,6 +1,6 @@
 # AI Quiz Platform - System Architecture
 
-![System Architecture]("https://drive.google.com/file/d/1zET_zDzVxjHhBH3LXyDw6Buc16tzHxFP/view?usp=sharing")
+![System Architecture](https://res.cloudinary.com/dmv4aqytv/image/upload/v1771714616/Day-1-2_kiiilq.png)
 
 ## Client Applications
 - Web App (React)
