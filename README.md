@@ -1,6 +1,6 @@
 # AI Quiz Platform - System Architecture
 
-![System Architecture Diagram](https://drive.google.com/file/d/1zET_zDzVxjHhBH3LXyDw6Buc16tzHxFP/view?usp=sharing)
+![System Architecture]("https://drive.google.com/file/d/1zET_zDzVxjHhBH3LXyDw6Buc16tzHxFP/view?usp=sharing")
 
 ## Client Applications
 - Web App (React)
