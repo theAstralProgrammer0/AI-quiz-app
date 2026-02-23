@@ -10,15 +10,15 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // import routes
-const userRoutes = require('./routes/user.routes');
-const authRoutes = require('./routes/auth.routes');
-const quizRoutes = require('./routes/quiz.routes');
-const analyticsRoutes = require('./routes/analytics.routes');
+//const userRoutes = require('./routes/user.routes');
+//const authRoutes = require('./routes/auth.routes');
+//const quizRoutes = require('./routes/quiz.routes');
+//const analyticsRoutes = require('./routes/analytics.routes');
 
 // import middleware
-const { requestLogger } = require('./middleware/request-logger');
-const { notFound } = require('./middleware/not-found');
-const { errorHandler } = require('./middleware/error-handler');
+//const { requestLogger } = require('./middleware/request-logger');
+//const { notFound } = require('./middleware/not-found');
+//const { errorHandler } = require('./middleware/error-handler');
 
 // import utils
 const logger = require('./utils/logger');
@@ -54,14 +54,14 @@ app.use(globalRateLimiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 /* request logger middleware */
-app.use(requestLogger);
+//app.use(requestLogger);
 
 /* mount routes */
-const prefix = process.env.API_PREFIX || '/api/v1';
-app.use(`${prefix}/user`, userRoutes);
-app.use(`${prefix}/auth`, authRoutes);
-app.use(`${prefix}/quiz`, quizRoutes);
-app.use(`${prefix}/analytics`, analyticsRoutes);
+//const prefix = process.env.API_PREFIX || '/api/v1';
+//app.use(`${prefix}/user`, userRoutes);
+//app.use(`${prefix}/auth`, authRoutes);
+//app.use(`${prefix}/quiz`, quizRoutes);
+//app.use(`${prefix}/analytics`, analyticsRoutes);
 
 /* health check */
 app.get('/health', (req, res) => {
@@ -75,7 +75,7 @@ app.get('/health', (req, res) => {
   logger.info('Health check successful');
 });
 /* error middlewares */
-app.use(notFound);
-app.use(errorHandler);
+//app.use(notFound);
+//app.use(errorHandler);
 
 module.exports = app;

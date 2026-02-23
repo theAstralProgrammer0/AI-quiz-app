@@ -2,7 +2,7 @@
 
 /* imports */
 const Anthropic = require('@anthropic-ai/sdk');
-const logger = require('./utils/logger');
+const logger = require('../utils/logger');
 
 /* check for Claude API Key */
 if (!process.env.CLAUDE_API_KEY) {

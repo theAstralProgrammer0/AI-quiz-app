@@ -4,7 +4,7 @@
 const app = require('./app');
 const { connectDatabase } = require('./config/database');
 const logger = require('./utils/logger');
-require('dotenv').config();
+require('dotenv').config()
 
 // define host and port
 const HOST = process.env.HOST || '0.0.0.0';
@@ -22,7 +22,7 @@ async function startServer() {
     });
     // graceful shutdown handlers
     const shutdown = (signal) => {
-      if signal === 'SIGTERM' || 'SIGINT':
+      if (signal === 'SIGTERM' || signal === 'SIGINT') {
         logger.info(`${signal} received. Cleaning up and shutting down gracefully...`);
         server.close(() => {
           logger.info('HTTP server closed');
@@ -33,12 +33,14 @@ async function startServer() {
           logger.error('Forced shutdown after timeout');
           process.exit(1);
         }, 10_000);
-      logger.info(`${signal} signal is unrecognized.`);
-      process.exit(1);
+      } else {
+        logger.info(`${signal} signal is unrecognized.`);
+        process.exit(1);
+      }
     };
 
-    process.on('SIGTERM', shutdown('SIGTERM'));
-    process.on('SIGINT', shutdown('SIGINT'));
+    process.on('SIGTERM', shutdown);
+    process.on('SIGINT', shutdown);
     process.on('unhandledRejection', (reason, promise) => {
       logger.error('Unhandled Rejection at:', promise, 'reason:', reason);
       // process.exit(1);
